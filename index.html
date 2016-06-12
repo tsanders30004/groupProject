@@ -6,44 +6,82 @@
      <!-- <link href="XXX.css" rel="stylesheet"> -->
      <link href="../animate.css" rel="stylesheet">
 
+     <style>
+     * {
+          font-family: Verdana;
+     }
+     td {
+          border: 1px solid gray;
+     }
+     </style>
+
+
      <script src="../jquery.js"></script>
      <script src="../angular.js"></script>
      <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-     <!-- <script>
+     <script>
+     // 12 Jun 2016:  Use Angular instead of jQuery to implement the HTTP calls. 
      var myApp = angular.module('myApp', []);
-     myApp.controller('myController', function($scope){
-          $scope.myVar = '';
-          $scope.myBoolean = true;
-          $scope.myFunction = function(){
-               /* function logic here */
-          };
+     myApp.controller('myController', function($scope, $http){
+          $http.get("https://api.soundcloud.com/users?client_id=66d8dccff739cbb7c078f98e11993438")
+          .success(function(usersData){
+               console.log(usersData);
+               $scope.myUsersData = usersData;
+               debugger;
+          });
+
+          $http.get("https://api.soundcloud.com/tracks?client_id=66d8dccff739cbb7c078f98e11993438")
+          .success(function(tracksData){
+               console.log(tracksData);
+               $scope.myTracksData = tracksData;
+               debugger;
+          });
      });
-     </script> -->
+     </script>
 
      <!-- Sound Cloud API -->
      <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 
      <script>
      SC.initialize({
-          client_id: 'b6cf7c01887ad9cc462774773aeeb2fb',
+          client_id: '66d8dccff739cbb7c078f98e11993438',
           redirect_uri: 'http://example.com/callback'
      });
-
-     debugger;
-     
-     var myScrUser = SC.get('/user/183/tracks').then(function(tracks){
-          alert('Latest track: ' + tracks[0].title);
-     });
-
-
      </script>
 
 
 
 </head>
-<!-- <body ng-app="myApp" ng-controller="myController"> -->
-<body>
-
+<body ng-app="myApp" ng-controller="myController">
+     <!-- show some user data in a table -->
+     <div class="container">
+          <div class="row">
+               <div id="users">
+                    <p>users</p>
+                    <table>
+                         <tr ng-repeat = "users in myUsersData | orderBy: 'country'">
+                              <td>{{users.id}}</td>
+                              <td>{{users.full_name}}</td>
+                              <td>{{users.city}}</td>
+                              <td>{{users.country}}</td>
+                              <td>{{users.description}}</td>
+                         </tr>
+                    </table>
+               </div>
+               <div id="tracks">
+                    <p>tracks</p>
+                    <table>
+                         <tr ng-repeat = "tracks in myTracksData">
+                              <td>{{tracks.id}}</td>
+                              <td>{{tracks.user_id}}</td>
+                              <td>{{tracks.genre}}</td>
+                              <td>{{tracks.title}}</td>
+                              <td>{{tracks.license}}</td>
+                         </tr>
+                    </table>
+               </div>
+          </div>
+     </div>
 </body>
 </html>

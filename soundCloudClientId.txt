@@ -2,3 +2,14 @@ Sound City
 
 Client ID      b6cf7c01887ad9cc462774773aeeb2fb
 Client Secret  8235a3c4cf3dcde7cc2d30aba173137d
+
+
+--------------------------
+
+Use Cody's Key:  66d8dccff739cbb7c078f98e11993438
+
+Not sure if we need Cody's secret key or not.  Ask him.
+
+Show tracks:    https://api.soundcloud.com/tracks?client_id=66d8dccff739cbb7c078f98e11993438
+
+Show users:    https://api.soundcloud.com/users?client_id=66d8dccff739cbb7c078f98e11993438
