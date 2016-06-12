@@ -8,7 +8,7 @@ Client Secret  8235a3c4cf3dcde7cc2d30aba173137d
 
 Use Cody's Key:  66d8dccff739cbb7c078f98e11993438
 
-Not sure if we need Cody's secret key or not.  Ask him.
+Not sure if we need Cody's secret key or not.  Ask him about it on 14 Jun 2016.
 
 Show tracks:    https://api.soundcloud.com/tracks?client_id=66d8dccff739cbb7c078f98e11993438
 
