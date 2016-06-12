@@ -1,0 +1,4 @@
+Sound City
+
+Client ID      b6cf7c01887ad9cc462774773aeeb2fb
+Client Secret  8235a3c4cf3dcde7cc2d30aba173137d

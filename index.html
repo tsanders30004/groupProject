@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <title>Sound Cloud Group Project</title>
+     <!-- <link href="XXX.css" rel="stylesheet"> -->
+     <link href="../animate.css" rel="stylesheet">
+
+     <script src="../jquery.js"></script>
+     <script src="../angular.js"></script>
+     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+     <!-- <script>
+     var myApp = angular.module('myApp', []);
+     myApp.controller('myController', function($scope){
+          $scope.myVar = '';
+          $scope.myBoolean = true;
+          $scope.myFunction = function(){
+               /* function logic here */
+          };
+     });
+     </script> -->
+
+     <!-- Sound Cloud API -->
+     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+
+     <script>
+     SC.initialize({
+          client_id: 'b6cf7c01887ad9cc462774773aeeb2fb',
+          redirect_uri: 'http://example.com/callback'
+     });
+
+     debugger;
+     
+     var myScrUser = SC.get('/user/183/tracks').then(function(tracks){
+          alert('Latest track: ' + tracks[0].title);
+     });
+
+
+     </script>
+
+
+
+</head>
+<!-- <body ng-app="myApp" ng-controller="myController"> -->
+<body>
+
+</body>
+</html>
